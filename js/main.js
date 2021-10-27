@@ -27,8 +27,28 @@ const itemsCont = document.querySelector('.items');
 const thumbsCont = document.querySelector('.thumbs');
 
 
-
+let item = "";
+let thumb = "";
 // creamo un ciclo che aggiunge nell'html tanti item e thumb quanti ce ne sono nel mockup (items.lenght)
-let ( i=0; i < items.length; i++) {
+for (let i=0; i < items.length; i++) {
+    console.log(items.length);
+    item += `
+    <div class="item active">
+    <img src="${items[i]}" alt="${title[i]}">
+        <div class="text">
+            <h3>${title[i]}</h3>
+            <p>${text[i]}</p>
+        </div>
+    </div>
+    `;
 
+    thumb += `
+    <div class="thumb active">
+        <img src="${items[i]}" alt="${title[i]}">
+    </div>
+    `;
 }
+
+itemsCont.innerHTML = item;
+
+thumbsCont.innerHTML = thumb;
