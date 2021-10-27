@@ -48,15 +48,14 @@ body{
 .thumbs{
     width: 110px;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     position: relative;
 }
 .thumb{
     height: calc(100% / 5);
 }
 .thumb>img{
-    /* display: block; */
     max-height: 100%;
     width: 100%;
     object-fit: cover;
