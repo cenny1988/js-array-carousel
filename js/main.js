@@ -57,14 +57,17 @@ thumbsCont.innerHTML += thumb;
 document.getElementsByClassName('thumb')[0].classList.add('active')
 
 // al click sul tasto next spostiamo la classe active sul item successivo
-const nextArrow = document.querySelector('.next');
 let statusPosition = 0;
+const nextArrow = document.querySelector('.next');
 
 nextArrow.addEventListener('click',
     function(){
         document.querySelector('.item.active').classList.remove('active');
         document.querySelector('.thumb.active').classList.remove('active');
         statusPosition++;
+        if( statusPosition>4 ){
+            statusPosition = 0;
+        }
         document.getElementsByClassName('item')[statusPosition].classList.add('active');
         document.getElementsByClassName('thumb')[statusPosition].classList.add('active');
     }
@@ -79,6 +82,9 @@ prevArrow.addEventListener('click',
         document.querySelector('.item.active').classList.remove('active');
         document.querySelector('.thumb.active').classList.remove('active');
         statusPosition--;
+        if( statusPosition<0 ){
+            statusPosition = 4;
+        }
         document.getElementsByClassName('item')[statusPosition].classList.add('active');
         document.getElementsByClassName('thumb')[statusPosition].classList.add('active');
     }
