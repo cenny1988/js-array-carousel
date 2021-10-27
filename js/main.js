@@ -65,7 +65,7 @@ nextArrow.addEventListener('click',
         document.querySelector('.item.active').classList.remove('active');
         document.querySelector('.thumb.active').classList.remove('active');
         statusPosition++;
-        if( statusPosition>4 ){
+        if( statusPosition>=items.length ){
             statusPosition = 0;
         }
         document.getElementsByClassName('item')[statusPosition].classList.add('active');
@@ -83,7 +83,7 @@ prevArrow.addEventListener('click',
         document.querySelector('.thumb.active').classList.remove('active');
         statusPosition--;
         if( statusPosition<0 ){
-            statusPosition = 4;
+            statusPosition = items.length-1;
         }
         document.getElementsByClassName('item')[statusPosition].classList.add('active');
         document.getElementsByClassName('thumb')[statusPosition].classList.add('active');
