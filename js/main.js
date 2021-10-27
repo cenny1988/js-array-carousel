@@ -31,7 +31,7 @@ let item = "";
 let thumb = "";
 // creamo un ciclo che aggiunge nell'html tanti item e thumb quanti ce ne sono nel mockup (items.lenght)
 for (let i=0; i < items.length; i++) {
-    console.log(items.length);
+    //console.log(items.length);
     item += `
     <div class="item ">
     <img src="${items[i]}" alt="${title[i]}">
@@ -57,5 +57,30 @@ thumbsCont.innerHTML += thumb;
 document.getElementsByClassName('thumb')[0].classList.add('active')
 
 // al click sul tasto next spostiamo la classe active sul item successivo
+const nextArrow = document.querySelector('.next');
+let statusPosition = 0;
 
+nextArrow.addEventListener('click',
+    function(){
+        document.querySelector('.item.active').classList.remove('active');
+        document.querySelector('.thumb.active').classList.remove('active');
+        statusPosition++;
+        document.getElementsByClassName('item')[statusPosition].classList.add('active');
+        document.getElementsByClassName('thumb')[statusPosition].classList.add('active');
+    }
+);
+
+
+// al click sul tasto prev spostiamo la classe active sul item precedente
+const prevArrow = document.querySelector('.prev');
+
+prevArrow.addEventListener('click',
+    function(){
+        document.querySelector('.item.active').classList.remove('active');
+        document.querySelector('.thumb.active').classList.remove('active');
+        statusPosition--;
+        document.getElementsByClassName('item')[statusPosition].classList.add('active');
+        document.getElementsByClassName('thumb')[statusPosition].classList.add('active');
+    }
+);
 
