@@ -49,8 +49,13 @@ for (let i=0; i < items.length; i++) {
     `;
 }
 
+// inseriamo nell html gli item e thumb creati attiviamo solo i primi elementi di ognuno con classe active
 itemsCont.innerHTML = item;
 document.getElementsByClassName('item')[0].classList.add('active')
 
-thumbsCont.innerHTML = thumb;
+thumbsCont.innerHTML += thumb;
 document.getElementsByClassName('thumb')[0].classList.add('active')
+
+// al click sul tasto next spostiamo la classe active sul item successivo
+
+
