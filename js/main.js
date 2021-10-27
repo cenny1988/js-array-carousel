@@ -33,7 +33,7 @@ let thumb = "";
 for (let i=0; i < items.length; i++) {
     console.log(items.length);
     item += `
-    <div class="item active">
+    <div class="item ">
     <img src="${items[i]}" alt="${title[i]}">
         <div class="text">
             <h3>${title[i]}</h3>
@@ -43,12 +43,14 @@ for (let i=0; i < items.length; i++) {
     `;
 
     thumb += `
-    <div class="thumb active">
+    <div class="thumb ">
         <img src="${items[i]}" alt="${title[i]}">
     </div>
     `;
 }
 
 itemsCont.innerHTML = item;
+document.getElementsByClassName('item')[0].classList.add('active')
 
 thumbsCont.innerHTML = thumb;
+document.getElementsByClassName('thumb')[0].classList.add('active')
