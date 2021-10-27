@@ -22,4 +22,13 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-//console.log('hey there!');
+// riferimenti html
+const itemsCont = document.querySelector('.items');
+const thumbsCont = document.querySelector('.thumbs');
+
+
+
+// creamo un ciclo che aggiunge nell'html tanti item e thumb quanti ce ne sono nel mockup (items.lenght)
+let ( i=0; i < items.length; i++) {
+
+}

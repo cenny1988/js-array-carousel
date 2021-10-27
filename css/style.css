@@ -12,18 +12,21 @@ body{
 }
 #container{
     display: flex;
-    height: 250px;
     /* debug */
     background-color: rgb(136, 224, 190);
-    width: 560px;
+    /* width: 560px; */
 
 }
 .items{
     width: 450px;
+    height: 250px;
+}
+.item{
+    height: 100%;
     display: none;
     position: relative;  
 }
-.items>img{
+.item>img{
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -46,7 +49,7 @@ body{
     font-size: .8rem;
 }
 
-#container-thumbs{
+.thumbs{
     width: 110px;
     height: 100%;
     display: flex;
@@ -54,7 +57,6 @@ body{
 }
 .thumb{
     height: calc(100% / 5);
-
 }
 .thumb>img{
     /* display: block; */
@@ -65,7 +67,7 @@ body{
     opacity: .7;
 }
 
-.items.active{
+.item.active{
     display: block;
 }
 
